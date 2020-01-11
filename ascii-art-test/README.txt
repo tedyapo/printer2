@@ -1,10 +1,10 @@
 compressed ASCII art generator
 ------------------------------
 
-ascii-art-list.txt: constains a list of ASCII art text files and
+ascii-art-list.txt: contains a list of ASCII art text files and
                     corresponding variable names to use for them
 
-compress-ascii.py: python3 script that reads ascci-art-list.txt and
+compress-ascii.py: python3 script that reads ascii-art-list.txt and
                    compresses all the listed text files into a header file
                    called compressed-art.h
 
