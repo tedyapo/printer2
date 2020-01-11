@@ -21,10 +21,7 @@ def emit(outfile, char, count):
         outfile.write("'\\x" + format(ord(char) | 0x80, 'x') + "',\n")
         return 1
     else:
-        if char == '\\' or char == "'":
-            outfile.write("'\\" + char + "',\n");
-        else:
-            outfile.write("'" + char + "',\n");
+        outfile.write("'\\x" + format(ord(char), 'x') + "',\n")
         outfile.write("'\\x" + format(count, 'x') + "',\n")
         return 2
 
@@ -35,7 +32,8 @@ def compress_ascii(outfile, filename, varname):
     compressed_size = 0
     for line in infile:
         uncompressed_size += len(line)
-        line = line.rstrip()
+        line = line.rstrip().encode('utf-8')
+        line = line.decode('unicode_escape')
         if not line:
             compressed_size += emit(outfile, '\n', 1)
             continue
