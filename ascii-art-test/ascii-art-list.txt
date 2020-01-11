@@ -1,0 +1,6 @@
+# ASCII art to compress and include in sketch
+
+# filename varname
+
+ennui-goat.txt goat
+nosleep-eye.txt nosleep_eye
