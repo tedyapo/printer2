@@ -1019,10 +1019,10 @@ const char compressed_goat[] PROGMEM = {
 }; // compressed_goat
 
 const char compressed_nosleep_eye[] PROGMEM = {
-'\x20',
-'\x1a',
 '\xa',
 '\x2',
+'\x20',
+'\x1f',
 '\xf7',
 '\x57',
 '\x7',
