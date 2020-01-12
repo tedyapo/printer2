@@ -16,3 +16,4 @@ ascii-art-test.ino: test program that chooses a random ASCII art image from
                     this program is for those who don't have an awesome little
                     inkjet
 
+Note: art files may contain escaped ASCII control codes, such as \x0a, but backslash characters must also be esacped, as in \\ 
