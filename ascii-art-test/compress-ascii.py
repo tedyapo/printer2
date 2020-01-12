@@ -3,8 +3,8 @@
 '''
 compression algorithm:
 
-1. single characters have MSB (0x80) set; this is stripped before printing
-2. repeat characters have MSB (0x80) clear, and are followed by a single-byte repeat count
+1. single characters have MSB (0x80) clear; this is stripped before printing
+2. repeat characters have MSB (0x80) set, and are followed by a single-byte repeat count
 
 '''
 
