@@ -17,13 +17,13 @@ void uncompress(const char *data)
 {
   const char *ptr = data;
   while(R(ptr) != 0){
-    if ((R(ptr) & 0x80)){
-      send_char(R(ptr) & 0x7f);
+    if (!((R(ptr) & 0x80))){
+      send_char(R(ptr));
     } else {
       char c = R(ptr);
       int count = R((unsigned char*)++ptr);
       for (int i=0; i<count; i++){
-        send_char(c);
+        send_char(c & 0x7f);
       }
     }
     ptr++;

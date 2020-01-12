@@ -18,10 +18,10 @@ def end_decl(outfile, name):
 
 def emit(outfile, char, count):
     if count == 1:
-        outfile.write("'\\x" + format(ord(char) | 0x80, 'x') + "',\n")
+        outfile.write("'\\x" + format(ord(char), 'x') + "',\n")
         return 1
     else:
-        outfile.write("'\\x" + format(ord(char), 'x') + "',\n")
+        outfile.write("'\\x" + format(ord(char) | 0x80, 'x') + "',\n")
         outfile.write("'\\x" + format(count, 'x') + "',\n")
         return 2
 
@@ -52,6 +52,7 @@ def compress_ascii(outfile, filename, varname):
                 count = 1
         compressed_size += emit(outfile, char, count)
         compressed_size += emit(outfile, '\n', 1)
+    compressed_size += emit(outfile, '\0', 1)
     end_decl(outfile, varname)
     sys.stderr.write('filename: ' + filename + '\n')
     sys.stderr.write('uncompressed: ' + str(uncompressed_size) + '\n')
